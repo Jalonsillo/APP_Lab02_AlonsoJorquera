@@ -11,9 +11,9 @@ export class EgresosService {
   constructor(private http: HttpClient) { }
 
   registrarEgresos(datos_egresos){
-    return this.http.post(`${this.backend}/crear_registro`, datos_egresos);
+    return this.http.post(`${this.backend}/crear-registro`, datos_egresos);
   }
   obtenerRegistroEgresos(){
-    return this.http.get(`${this.backend}/obtener_registro`);
+    return this.http.get(`${this.backend}/obtener-registro`);
 }
 }

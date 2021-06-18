@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  backend: "https://backend-registro-egreso.herokuapp.com/api-backend-prueba"
+  backend: "https://backend-registro-formulario.herokuapp.com/api-backend-prueba"
 };
 
 /*

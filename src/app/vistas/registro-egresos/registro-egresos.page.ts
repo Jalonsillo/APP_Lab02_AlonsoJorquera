@@ -30,11 +30,11 @@ export class RegistroEgresosPage implements OnInit {
   }
 
   RegistroEgreso(){
-    console.log(this.egreso)
-    this.egresosService.obtenerRegistroEgresos(this.egreso).subscribe(
+    console.log(this.datos_egresos)
+    this.egresosService.obtenerRegistroEgresos(this.datos_egresos).subscribe(
       (response:any)=>{
         if(response.registro){
-          this.egreso = new Egreso("",0,"")
+          this.datos_egresos = new Egreso("",0,"")
           this.router.navigateByUrl('/inicio')
         }
       },

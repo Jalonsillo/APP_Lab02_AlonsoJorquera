@@ -18,9 +18,11 @@ const routes: Routes = [
     loadChildren: () => import('./vistas/registro-usuarios/registro-usuarios.module').then( m => m.RegistroUsuariosPageModule)
   },
   {
-    path: 'listar-datos-formulario',
-    loadChildren: () => import('./vistas/listar-usuarios/listar-usuariosmodule').then( m => m.ListarUsuariosPageModule)
+    path: 'listar-usuarios',
+    loadChildren: () => import('./vistas/listar-usuarios/listar-usuarios.module').then( m => m.ListarUsuariosPageModule)
   },
+  
+
 ];
 
 @NgModule({
