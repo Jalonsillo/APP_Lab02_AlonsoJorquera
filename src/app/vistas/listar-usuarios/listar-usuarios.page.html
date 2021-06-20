@@ -13,11 +13,18 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-card-title class="ion-text-center">Listar Usuarios</ion-card-title>
+<ion-card>
+  <ion-card-header>
+    <ion-card-subtitle></ion-card-subtitle>
+  </ion-card-header>
 <ion-content>
 <ion-card-content>
- <ion-card *ngFor="let dato_obtenido of datos_obtenidos">
+ <ion-card  *ngFor="let dato_obtenido of datos_obtenidos" >
+  <ion-icon name="heart"></ion-icon>
+  <ion-card-title class="ion-text-center">Usuario: {{dato_obtenido.nombre}}</ion-card-title>
    <ion-item>
-    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
+    <ion-icon name="arrow-redo-circle-outline"></ion-icon> 
      Rut: {{dato_obtenido.rut}}
    </ion-item>
    <ion-item>
