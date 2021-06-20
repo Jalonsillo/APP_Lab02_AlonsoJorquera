@@ -19,8 +19,8 @@ export class EnviarDatos{
 export class RegistroUsuariosPage implements OnInit {
 
   datos_usuarios;
-  constructor(private usuariosServicie: UsuariosService) {
-    this.datos_usuarios = new EnviarDatos("Ingrese rut","Ingrese id","Ingrese nombre", "Ingrese apellido","Ingrese correo","ingrese password");
+  constructor(private usuariosService: UsuariosService) {
+    this.datos_usuarios = new EnviarDatos("Ingrese rut","Ingrese id","Ingrese nombre", "Ingrese apellido","Ingrese correo","Ingrese password");
 
   }
  
@@ -29,8 +29,9 @@ export class RegistroUsuariosPage implements OnInit {
   ngOnInit() {
   }
 
-  EnviarDatos(){
-    this.usuariosServicie.registrarUsuarios(this.datos_usuarios).subscribe(
+  enviarDatos(){
+    
+    this.usuariosService.registrarUsuarios(this.datos_usuarios).subscribe(
       (response:any)=>{
         if(response.registro){
           alert("datos registrados correctamente");
@@ -41,6 +42,9 @@ export class RegistroUsuariosPage implements OnInit {
         
       }
     )
+    error =>{
+      alert("error al registrar")
+    }
     console.log("Datos del usuario: ", this.datos_usuarios);
 
   }

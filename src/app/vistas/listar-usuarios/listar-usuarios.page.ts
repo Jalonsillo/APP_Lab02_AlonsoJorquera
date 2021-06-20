@@ -7,23 +7,21 @@ import { UsuariosService } from '../../servicios/usuarios.service'
 })
 export class ListarUsuariosPage implements OnInit {
  
-datos_obtenidos
-
-constructor(private usuariosService: UsuariosService) {
-    
-   }
+datos_obtenidos;
+constructor(private usuariosService: UsuariosService) { }
 
   ngOnInit() {
   }
+  
 ionVieWillEnter(){
   this.obtenerDatosUsuarios()
 }
 
  obtenerDatosUsuarios(){
+
    this.usuariosService.obtenerRegistroUsuarios().subscribe(
    (response:any)=>{
-     console.log(response)
-     this.datos_obtenidos = response.usuarios;
+     this.datos_obtenidos = response.registros;
    },
    error=>{
      alert("error en la peticion")

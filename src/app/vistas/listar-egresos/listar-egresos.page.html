@@ -3,12 +3,12 @@
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
     </ion-buttons>
-    <ion-title>listar usuarios</ion-title>
+    <ion-title>Listar egresos</ion-title>
     <ion-item>
     <ion-icon name="home-outline"></ion-icon>
     <ion-button routerLink="/inicio" >Inicio</ion-button>
     <ion-icon name="accessibility-outline"></ion-icon>
-    <ion-button routerLink="/registro-usuarios" >Registro de usuarios</ion-button>
+    <ion-button routerLink="/registro-egresos" >Registro de egresos</ion-button>
   </ion-item>
   </ion-toolbar>
 </ion-header>
@@ -18,27 +18,17 @@
  <ion-card *ngFor="let dato_obtenido of datos_obtenidos">
    <ion-item>
     <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     Rut: {{dato_obtenido.rut}}
+     ID: {{dato_obtenido.id}}
    </ion-item>
    <ion-item>
     <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     ID: {{dato_obtenido._id}}
+     Descripcion: {{dato_obtenido._descripcion}}
    </ion-item>
    <ion-item>
     <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     Nombre: {{dato_obtenido.nombre}}
+     Precio: {{dato_obtenido.precio}}
    </ion-item>
    <ion-item>
-    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     Apellido: {{dato_obtenido.apellido}}
-   </ion-item>
-   <ion-item>
-    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     Coreo: {{dato_obtenido.correo}}
-   </ion-item>
-   <ion-item>
-    <ion-icon name="arrow-redo-circle-outline"></ion-icon>
-     Password: {{dato_obtenido.password}}
    </ion-item>
  </ion-card>
 </ion-card-content>
