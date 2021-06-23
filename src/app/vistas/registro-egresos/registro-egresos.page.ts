@@ -3,8 +3,6 @@ import { EgresosService } from '../../servicios/egresos.service';
 import { Router } from '@angular/router';
 export class Egreso{
   constructor(
-
-    public id: string,
     public descripcion: string,
     public precio: number,
     public id_usuario: string,
@@ -16,7 +14,7 @@ export class Egreso{
   templateUrl: './registro-egresos.page.html',
   styleUrls: ['./registro-egresos.page.scss'],
 })
-export class RegistroEgresosPage implements OnInit {
+export class RegistroEgresosPage implements OnInit { 
 
   datos_egresos;
   constructor(private egresosService: EgresosService, private router:Router) {
@@ -29,19 +27,18 @@ export class RegistroEgresosPage implements OnInit {
   }
 
   RegistroEgreso(){
+    console.log(this.datos_egresos)
    this.egresosService.registrarEgresos(this.datos_egresos).subscribe(
       (response:any)=>{
         if(response.registro){
-          alert("datos registrados correctamente");
-        }else{
-         alert("datos no registrados") 
+          this.datos_egresos = new Egreso("" ,0,"")
+          this.router.navigateByUrl('/inicio')
         }
-
-        
+      },
+      error => {
+        alert("error en la peticion")
       }
-    )
-    console.log("Datos del usuario: ", this.datos_egresos);
-
+   )
+    }
   }
-
-}
+    
